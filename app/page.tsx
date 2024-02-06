@@ -12,39 +12,50 @@ export default function Home() {
           <div className="grid grid-cols-3 gap-4">
             <Label htmlFor="id">ID da solicitação:</Label>
             <Label htmlFor="data">Data da solicitação:</Label>
-            <Label htmlFor="solicitante">Solicitante:</Label>
+            <Label htmlFor="solicitante">Status:</Label>
           </div>
           <div className="grid grid-cols-3 gap-4">
             <Input id="id" name="id" placeholder="Id da solicitação" />
             <Input id="data" type="date" name="data" />
+            <Input id="status" name="status" placeholder="Solicitante" />
+          </div>
+          <div className="grid grid-cols-3 gap-4">
+            <Label htmlFor="solicitante">Solicitante:</Label>
+            <Label htmlFor="email">Email do Solicitante:</Label>
+            <Label htmlFor="matricula">Matrícula:</Label>
+          </div>
+          <div className="grid grid-cols-3 gap-4">
             <Input id="solicitante" name="solicitante" placeholder="Solicitante" />
+            <Input id="email" name="email" placeholder="Email" />
+            <Input id="matricula" name="matricula" placeholder="Matrícula" />
           </div>
           <div className="grid grid-cols-3 gap-4">
-            <Label htmlFor="empresa">Empresa:</Label>
-            <Label htmlFor="centrocusto">Centro de Custo:</Label>
-            <Label htmlFor="setor">Setor:</Label>
+            <Label htmlFor="tipo">Tipo da solicitação:</Label>
+            <Label htmlFor="servico">Serviço:</Label>
+            <Label htmlFor="anexo">Anexar Arquivo:</Label>
           </div>
           <div className="grid grid-cols-3 gap-4">
-            <Input id="empresa" name="empresa" placeholder="Empresa" />
-            <Input id="centrocusto" name="centrocusto" placeholder="Centro de Custo" />
-            <Input id="setor" name="setor" placeholder="setor" />
-          </div>
-          <div className="grid grid-cols-3 gap-4">
-            <Label htmlFor="setor">Tipo da solicitação:</Label>
-          </div>
-          <div className="grid grid-cols-3 gap-4">
-            <Select>
+            <Select name="tipo">
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Tipo" />
               </SelectTrigger>
               <SelectContent>
-                <SelectGroup>
-                  <SelectItem value="apple">NF-e/CT-e</SelectItem>
-                  <SelectItem value="banana">DDA</SelectItem>
-                  <SelectItem value="blueberry">outro</SelectItem>
-                </SelectGroup>
+                  <SelectItem value="nfe-cte">NF-e/CT-e</SelectItem>
+                  <SelectItem value="dda">DDA</SelectItem>
+                  <SelectItem value="outro">outro</SelectItem>
               </SelectContent>
             </Select>
+            <Select name="servico">
+              <SelectTrigger className="w-[180px]">
+                <SelectValue placeholder="Serviço" />
+              </SelectTrigger>
+              <SelectContent>
+                  <SelectItem value="servico1">Serviço 1</SelectItem>
+                  <SelectItem value="servico2">Serviço 2</SelectItem>
+                  <SelectItem value="servico3">Serviço 3</SelectItem>
+              </SelectContent>
+            </Select>
+            <Input id="anexo" type="file" />
           </div>
         </form>
       </div>
